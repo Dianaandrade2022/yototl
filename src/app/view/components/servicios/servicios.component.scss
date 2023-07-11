@@ -1,0 +1,36 @@
+.py-5.py-5.px-2{
+  background-image: url("../../../../assets/img/servicesbg.png");
+  background-size: cover;
+  height: fit-content;
+}
+.card{
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px gray;
+  animation-name: ser;
+  animation-duration: 4s;
+  height: 45vh;
+}
+h5{
+  font-family: AtmaB;
+}
+p{
+  font-family: AtmaL;
+}
+@keyframes ser {
+  from {
+  margin-top: 10vh;
+  opacity: 0.3;
+  }
+  to{
+  margin-top: 10px;
+  opacity: 1;
+  }
+}
+@media screen and (max-height:710px){
+
+.card{
+  height: fit-content;
+}
+
+}

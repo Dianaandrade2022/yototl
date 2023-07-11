@@ -1,0 +1,36 @@
+label{
+  font-family: AtmaM;
+}
+textarea,input{
+  border-color: var(--light);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+textarea:focus,input:focus{
+  box-shadow: 0px 0px 10px 1px var(--light);
+  border-color: var(--light);
+}
+button{
+  background-color: var(--azul);
+  font-family: AtmaM;
+  border-radius: 8px;
+  border: none;
+  padding: 10px;
+  padding-inline: 20px;
+  color: white;
+  &:hover{
+    background-color: lighten($color: #1ED5C3, $amount: 25);
+    color: black;
+    transition-timing-function: 800ms;
+  }
+}
+.bg-customize{
+  background:
+  url('../../../../assets/img/bg-top.png'),
+  url('../../../../assets/img/bg-triangle.png'),
+  linear-gradient(0deg, white, var(--azul),var(--light), white);
+  // url('../../../../assets/img/bg-top.png');
+  background-repeat: no-repeat;
+  box-shadow: 0xp 0px 30px;
+}
+

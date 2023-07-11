@@ -1,0 +1,13 @@
+<div class="py-5 px-2">
+  <div class="row container-fluid">
+    <h1 class="text-center mb-5">Servicios</h1>
+    <div class="col-lg-4 col-sm-12 col-md-4 mt-3" *ngFor="let i of services">
+      <div class="card p-2">
+        <div class="card-body">
+          <h5 class="card-title mb-4">{{i.name}}</h5>
+          <p class="card-text">{{i.desc}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+img{
+  width: 3vw;
+}
+@media screen and (max-width:992px){
+img{
+  width: 5vw;
+}
+.fixed-top{
+  position: inherit;
+}
+}
+@media screen and (max-width:570px){
+  img{
+    width: 5vh;
+  }
+  }
+
+nav{
+  background-color: var(--white);
+}
+a{
+  text-decoration: none;
+  font-family: AtmaB;
+}
+

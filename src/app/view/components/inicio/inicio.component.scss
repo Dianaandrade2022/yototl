@@ -1,0 +1,16 @@
+
+img{
+  height: fit-content;
+  background-size: contain;
+}
+div{
+  animation: ser 3s;
+}
+@keyframes ser {
+  from {
+  opacity: 0.3;
+  }
+  to{
+  opacity: 1;
+  }
+}

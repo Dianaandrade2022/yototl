@@ -1,0 +1,19 @@
+
+<div class="container-fluid row mx-auto justify-content-lg-start justify-content-md-start justify-content-sm-center">
+  <h1 class="text-center my-5">Noticias</h1>
+ <div class="card col-lg-2 col-md-4 col-sm-5 mx-1 my-2" *ngFor="let i of noticias">
+      <img [src]="i.img" class="card-img-top w-100" alt="card de la noticia">
+      <div class="card-body">
+        <h5 class="card-title">{{i.title}}</h5>
+        <p class="card-text">{{i.autor}}</p>
+        <p class="card-text">{{i.date}}</p>
+       <div class="row">
+        <div class="col">
+          <a href="/admin/noticias/modificar/" class="btn btn-info" type="submit" action="">
+            Ver noticia
+          </a>
+         </div>
+       </div>
+      </div>
+    </div>
+</div>
