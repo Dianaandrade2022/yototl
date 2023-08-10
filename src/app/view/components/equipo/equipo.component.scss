@@ -1,5 +1,6 @@
 img{
   width: 15vh;
+
 }
 h5,h1{
   font-family: AtmaB;
@@ -8,16 +9,16 @@ p{
   font-family: AtmaL;
 }
 .bg-this{
+  height: auto;
+  max-height: 400px;
+  min-height: 350px;
   background:linear-gradient(180deg,#1ed5c38b -10%,#cc6ce697 60% ,#fd6f6299 140%);
   line-height:20px;
-  height: 45vh;
 }
+
 .bg-these{
   line-height:20px;
   height: 45vh;
-}
-.bg-this-gradient{
-  background: linear-gradient(10deg,#1ed5c38b,#fd6f6299);
 }
 .pt-4{
   height: fit-content;
@@ -26,9 +27,7 @@ p{
   }
 }
 @media screen and (max-width:992px){
-  .bg-this{
-    height: inherit;
-  }
+
   .bg-these{
     height: inherit ;
   }
@@ -63,22 +62,25 @@ svg{
   .card-body > p{
     margin-top: 20px;
     display: block;
+    height: 55vh;
+    align-content: baseline;
   }
 }
 .card-img-top{
-  width: 34vh;
+  width: 29vh;
   border-radius: 45px;
 }
 .card{
   height: 55vh;
 
 }
-.card:hover{
+.col-lg-3:hover{
     img{
       display: none;
     }
     & > div  {
-      background-color: rgba(255, 255, 255, 0.756);
+      background: red;
+      // background-color: rgba(255, 255, 255, 0.756);
       border-radius: 10px;
     }
 }
@@ -96,15 +98,16 @@ svg{
 }
 @media screen and (max-height:710px){
 
-  .bg-this{
-    height: max-content;
-    background-position-y: center;
-  }
+
   .card{
     height: max-content;
     & > img {
       margin-inline: auto;
     }
+  }
+  .card-img-top{
+    width: 25vh;
+
   }
 
   }

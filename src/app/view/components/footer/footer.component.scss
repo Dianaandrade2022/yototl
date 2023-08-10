@@ -2,10 +2,11 @@ footer{
   margin-top: 20vh;
   background-image: url("../../../../assets/img/bg-top.png"),
   linear-gradient(90deg,var(--azul),var(--light));
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   backdrop-filter: blur(10px);
   background-position: top;
+  width: 100%;
 }
 *{
   color: black;
@@ -21,4 +22,8 @@ footer>div>section>div>div:nth-child(4)>ul>li>a{
   font-family: AmtaM;
   font-weight: 600;
   text-decoration: none;
+}
+#contact{
+  text-decoration: none;
+  color: purple ;
 }

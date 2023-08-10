@@ -8,16 +8,20 @@ import { EquipoComponent } from './view/components/equipo/equipo.component';
 import { ProyectosComponent } from './view/components/proyectos/proyectos.component';
 import { ServiciosComponent } from './view/components/servicios/servicios.component';
 import { FooterComponent } from './view/components/footer/footer.component';
-import { ContactoComponent } from './view/components/contacto/contacto.component';
-import { LoginComponent } from './view/pages/login/login.component';
 import { HomeComponent } from './view/pages/home/home.component';
 import { NavComponent } from './view/components/nav/nav.component';
 import { AliadosComponent } from './view/components/aliados/aliados.component';
-import { NoticiasComponent } from './view/pages/noticias/noticias.component';
-import { CrearComponent } from './view/pages/noticias/crear/crear.component';
-import { ModificarComponent } from './view/pages/noticias/modificar/modificar.component';
 import { NoticiaComponent } from './view/components/noticia/noticia.component';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AllNoticesComponent } from './view/pages/all-notices/all-notices.component';
+import { environment } from 'src/environments/environment';
+import {provideAuth, getAuth} from '@angular/fire/auth'
+import { CommonModule } from '@angular/common';
+import { AuthModule} from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,21 +30,27 @@ import { NoticiaComponent } from './view/components/noticia/noticia.component';
     ProyectosComponent,
     ServiciosComponent,
     FooterComponent,
-    ContactoComponent,
-    LoginComponent,
     HomeComponent,
     NavComponent,
     AliadosComponent,
-    NoticiasComponent,
-    CrearComponent,
-    ModificarComponent,
     NoticiaComponent,
+    AllNoticesComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),
+    AuthModule,
+    CommonModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
