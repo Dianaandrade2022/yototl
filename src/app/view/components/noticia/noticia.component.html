@@ -2,7 +2,7 @@
 <div class="container-fluid row mx-auto justify-content-center">
   <h1 class="text-center my-5">Noticias</h1>
   <div class="card col-lg-2 col-md-4 col-sm-5 mx-1 my-1" *ngFor="let i of notices">
-    <img [src]="i.data.img" class="card-img-top w-100" alt="img de la noticia" *ngIf="i.data.img" >
+    <img src="https://firebasestorage.googleapis.com/v0/b/yototl.appspot.com/o/images%2F{{i.data.img}}?alt=media&token=20d5ff9e-9064-40bd-bbaa-9596b09982d9" class="card-img-top w-100" alt="img de la noticia" *ngIf="i.data.img" >
     <ng-template>
       <img src="https://camarasal.com/wp-content/uploads/2020/08/default-image-5-1.jpg">
     </ng-template>

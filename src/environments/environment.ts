@@ -1,3 +1,5 @@
+import { initializeApp } from "@angular/fire/app";
+
 export const environment = {
   firebase: {
     apiKey: "AIzaSyAJKhF2_eR-I7VvcjL2YUc1wbBk1Kr6Zvk",
