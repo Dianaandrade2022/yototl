@@ -1,20 +1,22 @@
 
 <div class="container-fluid row mx-auto justify-content-center">
   <h1 class="text-center my-5">Noticias</h1>
- <div class="card col-lg-2 col-md-4 col-sm-5 mx-1 my-2" *ngFor="let i of notices">
-      <img [src]="i.img" class="card-img-top w-100" alt="card de la noticia">
-      <div class="card-body">
-        <h5 class="card-title">Titulo:{{i.title}}</h5>
-        <p class="card-text">Autor:{{i.autor}}</p>
-        <p class="card-text">Fecha:{{i.fecha}}</p>
-        <p class="card-text text-truncate">Descripción{{i.description}}</p>
-       <div class="row">
+  <div class="card col-lg-2 col-md-4 col-sm-5 mx-1 my-1" *ngFor="let i of notices">
+    <img [src]="i.data.img" class="card-img-top w-100" alt="img de la noticia" *ngIf="i.data.img" >
+    <ng-template>
+      <img src="https://camarasal.com/wp-content/uploads/2020/08/default-image-5-1.jpg">
+    </ng-template>
+    <div class="card-body">
+      <h5 class="card-title">Titulo: {{i.data.titulo}}</h5>
+      <p class="card-text">Autor: {{i.data.autor}}</p>
+      <p class="card-text">Fecha: {{i.data.fecha}}</p>
+      <div class="row">
         <div class="col">
-          <a href="" class="btn btn-info" type="submit" action="">
-            Ver noticia
-          </a>
-         </div>
-       </div>
+          <button class="btn btn-primary" (click)="downloadImage(i.data.document)">
+            <i class="bi bi-eye"></i>
+          </button>
+        </div>
       </div>
     </div>
+  </div>
 </div>

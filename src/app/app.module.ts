@@ -14,7 +14,7 @@ import { AliadosComponent } from './view/components/aliados/aliados.component';
 import { NoticiaComponent } from './view/components/noticia/noticia.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AllNoticesComponent } from './view/pages/all-notices/all-notices.component';
-import { environment } from 'src/environments/environment';
+import { environment } from '../environments/environment';
 import {provideAuth, getAuth} from '@angular/fire/auth'
 import { CommonModule } from '@angular/common';
 import { AuthModule} from '@angular/fire/auth';
@@ -44,6 +44,7 @@ import {HttpClientModule} from '@angular/common/http'
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
+    provideAuth(() => getAuth()),
     AuthModule,
     CommonModule,
     HttpClientModule

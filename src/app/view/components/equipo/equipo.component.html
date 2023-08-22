@@ -7,8 +7,13 @@
       <div class="col-lg-4 col-sm-6 text-center bg-another pt-4" *ngFor="let i of equipo">
         <div class="position-relative bg-this rounded pt-5 pb-4 px-4">
           <div class="d-inline-flex align-items-center justify-content-center bg-this-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow">
-            <img src="../../../../assets/img/animated.png">
+            <img class="roundedv" [src]="i.img" *ngIf="i.img; else otro">
           </div>
+          <ng-template #otro>
+            <div class="d-inline-flex align-items-center justify-content-center bg-this-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow">
+              <img src="../../../../assets/img/animated.png">
+            </div>
+          </ng-template>
           <h5 class="mt-4 mb-3">{{i.name}}</h5>
           <p class="mb-0">{{i.semblanza}}</p>
         </div>
@@ -23,7 +28,7 @@
       <div class="row gy-3 gx-5 justify-content-center">
         <div class="col-lg-3 col-sm-6 text-center pt-4" *ngFor="let i of becarios">
           <div class="card">
-            <img src="https://media-public.canva.com/mGmzQ/MAE7VvmGmzQ/1/s.jpg" class="card-img-top" alt="...">
+            <img [src]="i.img" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{i.name}}</h5>
               <p class="card-text">{{i.semblanza}}</p>

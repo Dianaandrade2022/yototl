@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Firestore, collection, getDocs } from '@angular/fire/firestore';
-import { getDownloadURL, ref } from '@angular/fire/storage';
-import { Storage } from '@angular/fire/storage';
+import { Storage, getDownloadURL, ref } from '@angular/fire/storage';
 @Component({
   selector: 'app-noticia',
   templateUrl: './noticia.component.html',
@@ -31,38 +30,26 @@ export class NoticiaComponent implements OnInit{
     private firestore:Firestore,
   ) {}
   async mostrarnoticias(){
-    const refnew = collection(this.firestore,'noticias')
-    const q = await getDocs(refnew)
-    const r = q.docs.map(doc => doc.data()
-    // const imgRef = ref(this.storag, 'images/' + data["img"]);
-    )
-    this.notices = r
-    console.log(r)
-    // const refdata = collection(this.firestore, 'noticias');
-    // const querySnapshot = await getDocs(refdata)
-
-    // const promises = querySnapshot.docs.map(async (doc) => {
-    //   const id = doc.id;
-    //   const data = doc.data();
-    //   const imgRef = ref(this.storage, 'images/' + data["img"]);
-    //   const imgUrl = await getDownloadURL(imgRef);
-    //   data["img"] = imgUrl
-    //   const docref = ref(this.storage, 'archivos/' + data["document"]);
-    //   const docurl = await getDownloadURL(docref);
-    //   data["document"] = docurl
-    //   return { data };
-
-    // });
-    // this.notices = await Promise.all(promises);
-    // this.notices = [...this.notices];
-    // if (querySnapshot.size > 0) {
-    //   this.notices = querySnapshot.docs.map(doc => doc.data())
-    // } else {
-
-    // }
-    // const refimg = ref(this.storage,'images/focus on.jpg');
-    // this.getimg = await getDownloadURL(refimg);
-    // console.log(this.getimg);
-    // return this.getimg
+    const refdata = collection(this.firestore, 'noticias');
+    const querySnapshot = await getDocs(refdata)
+    const promises = querySnapshot.docs.map(async (doc) => {
+      const id = doc.id;
+      const data = doc.data();
+      // const imgRef = ref(this.storage, 'images/' + data["img"]);
+      // const imgUrl = await getDownloadURL(imgRef);
+      // data["img"] = imgUrl
+      // const docref = ref(this.storage, 'archivos/' + data["document"]);
+      // const docurl = await getDownloadURL(docref);
+      // data["document"] = docurl
+      return { data , id };
+    });
+    this.notices = await Promise.all(promises);
+    this.notices = [...this.notices];
+  }
+  downloadImage(url:any) {
+    var link = document.createElement('a');
+    link.href = url;
+    link.download = 'document.pdf';
+    link.click();
   }
 }

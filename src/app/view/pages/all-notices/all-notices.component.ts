@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./all-notices.component.scss']
 })
 export class AllNoticesComponent {
-
+  downloadImage(url:any) {
+    var link = document.createElement('a');
+    link.href = url;
+    link.download = 'document.pdf';
+    link.click();
+  }
 }
